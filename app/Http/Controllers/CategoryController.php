@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function show($id) 
     {
         $category = Category::where('id', '=', $id)
-            ->with()
+            ->with('products')
             ->first();
 
             return view('category.show', compact('category'));
